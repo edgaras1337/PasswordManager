@@ -1,4 +1,4 @@
-﻿namespace app
+﻿namespace app.Forms
 {
     partial class LoginForm
     {
@@ -116,6 +116,9 @@
             this.Controls.Add(this.loginBtn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.heading);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(725, 458);
+            this.MinimumSize = new System.Drawing.Size(725, 458);
             this.Name = "LoginForm";
             this.Text = "LoginForm";
             this.Load += new System.EventHandler(this.LoginForm_Load);

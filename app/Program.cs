@@ -1,3 +1,4 @@
+using app.Forms;
 using System.Diagnostics;
 
 namespace app
@@ -15,9 +16,6 @@ namespace app
             ApplicationConfiguration.Initialize();
 
             FormManager.LoginForm = new LoginForm();
-
-            //Application.ApplicationExit += new EventHandler(EventManager.OnFormClosed);
-            //loginForm.Closed += new EventHandler(EventManager.OnFormClosed);
 
             Application.Run(FormManager.LoginForm);
         }

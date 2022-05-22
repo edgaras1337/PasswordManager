@@ -10,7 +10,6 @@ namespace app
     {
         public static string? Name { get; set; }
         public static string? Password { get; set; }
-        //public static string? PasswordHash { get; set; }
         public static string? AccountFilePath { get; set; }
         public static string? AccountFilePathEnc { get; set; }
 

@@ -13,28 +13,10 @@ namespace app
         .Parent!.Parent!.FullName}\{AccountsDirName}\";
 
         public static string CreateAccountFilePath(string fileName) => 
-            @$"{Directory.GetParent(Directory.GetCurrentDirectory())!
-                .Parent!.Parent!.FullName}\{AccountsDirName}\{fileName}ACCOUNT.csv";
+            @$"{AccountDirPath}\{fileName}ACCOUNT.csv";
 
         public static string CreateAccountEncFilePath(string fileName) =>
-            @$"{Directory.GetParent(Directory.GetCurrentDirectory())!
-                .Parent!.Parent!.FullName}\{AccountsDirName}\{fileName}ACCOUNT.enc";
-
-        public static string AccountFileName { get; set; } = "ACCOUNT.csv";
-        public static string AccountFilePath { get; set; } = @$"{Directory.GetParent(Directory.GetCurrentDirectory())!
-                .Parent!.Parent!.FullName}\{AccountFileName}";
-
-        public static string AccountFileNameEnc { get; set; } = "ACCOUNT.enc";
-        public static string AccountFilePathEnc { get; set; } = @$"{Directory.GetParent(Directory.GetCurrentDirectory())!
-                .Parent!.Parent!.FullName}\{FileManager.AccountFileNameEnc}";
-
-        public static void CreateFile(string filePath)
-        {
-            if (!File.Exists(filePath))
-            {
-                File.Create(filePath);
-            }
-        }
+            @$"{AccountDirPath}\{fileName}ACCOUNT.enc";
 
         public static void DeleteFile(string filePath)
         {

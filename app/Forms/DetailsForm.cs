@@ -1,4 +1,5 @@
-﻿using System;
+﻿using app.EncryptionHelpers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -6,9 +7,10 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows.Forms;
 
-namespace app
+namespace app.Forms
 {
     public partial class DetailsForm : Form
     {
@@ -26,6 +28,9 @@ namespace app
             passwordTxt.Text = RSAHelper.DecryptPassword(_passwordContent.Password!);
             applicationTxt.Text = _passwordContent.Application;
             commentTxt.Text = _passwordContent.Comment;
+
+            toolTip1.SetToolTip(copyLabel, "Copied!");
+            toolTip1.Active = false;
         }
 
         private void saveBtn_Click(object sender, EventArgs e)
@@ -95,7 +100,20 @@ namespace app
 
         private void copyLabel_Click(object sender, EventArgs e)
         {
+            toolTip1.Active = true;
+            toolTip1.Show(toolTip1.GetToolTip(copyLabel), copyLabel);
+
             Clipboard.SetText(passwordTxt.Text);
+
+            var timer = new System.Timers.Timer();
+            timer.Elapsed += new ElapsedEventHandler(OnTimedEvent!);
+            timer.Interval = 10000;
+            timer.Enabled = true;
+        }
+
+        private void OnTimedEvent(object source, ElapsedEventArgs e)
+        {
+            toolTip1.Active = false;
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace app
+﻿namespace app.Forms
 {
     partial class MainForm
     {
@@ -196,6 +196,7 @@
             this.clearFieldsBtn.TabIndex = 10;
             this.clearFieldsBtn.Text = "Clear fields";
             this.clearFieldsBtn.UseVisualStyleBackColor = true;
+            this.clearFieldsBtn.Click += new System.EventHandler(this.clearFieldsBtn_Click);
             // 
             // savePasswordBtn
             // 
@@ -355,6 +356,9 @@
             this.Controls.Add(this.logoutBtn);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(871, 512);
+            this.MinimumSize = new System.Drawing.Size(871, 512);
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);

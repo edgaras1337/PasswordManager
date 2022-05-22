@@ -1,4 +1,5 @@
-﻿using System;
+﻿using app.EncryptionHelpers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace app
+namespace app.Forms
 {
     public partial class MainForm : Form
     {
@@ -191,6 +192,11 @@ namespace app
             if (res == DialogResult.No) return;
 
             this.Close();
+        }
+
+        private void clearFieldsBtn_Click(object sender, EventArgs e)
+        {
+            ClearFields();
         }
     }
 }

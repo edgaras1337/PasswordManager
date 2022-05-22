@@ -1,6 +1,6 @@
 using System.Diagnostics;
 
-namespace app
+namespace app.Forms
 {
     public partial class RegisterForm : Form
     {

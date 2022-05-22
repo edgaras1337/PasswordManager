@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Threading.Tasks;
 
-namespace app
+namespace app.EncryptionHelpers
 {
     public class AESHelper
     {
@@ -15,9 +15,6 @@ namespace app
         {
             Aes aes = Aes.Create();
             ICryptoTransform transform = aes.CreateEncryptor();
-
-            //string inFile = ApplicationUser.AccountFilePath!;
-            //string outFile = ApplicationUser.AccountFilePathEnc!;
 
             using var outFS = new FileStream(outFile, FileMode.Create);
 
@@ -63,9 +60,6 @@ namespace app
 
             byte[] LenK = new byte[4];
             byte[] LenIV = new byte[4];
-
-            //string inFile = ApplicationUser.AccountFilePathEnc!;
-            //string outFile = ApplicationUser.AccountFilePath!;
 
             using (var inFs = new FileStream(inFile, FileMode.Open))
             {
