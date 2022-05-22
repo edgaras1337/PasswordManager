@@ -52,7 +52,7 @@ namespace app.Forms
         {
             if (string.IsNullOrEmpty(nameTxt.Text) || string.IsNullOrEmpty(passwordTxt.Text))
             {
-                MessageBox.Show("Fill out all fields!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Fill out all required fields!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
